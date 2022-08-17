@@ -192,9 +192,53 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
-function game(user, computer){
-  /*add your code here*/
-}
+function computerTurn(){
+
+  let computer = Math.floor(Math.random()*3)+1
+  
+    if(computer === 3){
+    return 'rock'}
+    if(computer === 2){
+      return 'paper'
+    }
+    if(computer === 1){
+      return 'scissors'
+    }
+  }
+  function game(user, computer){
+    
+  if(user === computer){
+  return "it's a tie"
+  }
+  if(user === 'rock'){
+    if(computer === 'scissors'){
+      return "you win!"
+    }
+    if(computer === 'paper'){
+      return "you lose!"
+    }
+  }
+  if(user === 'paper'){
+    if(computer === 'rock'){
+    return "you win!"
+  }
+    if(computer === 'scissors'){
+    return "you lose!"
+  }
+  }
+  if(user === 'scissors'){
+    if(computer === 'rock'){
+    return "you lose!"
+  }
+    if(computer === 'paper'){
+      return "you win!"
+    }
+  }
+  
+    
+  }
+  
+  console.log(game('rock', computerTurn()));
 
 
 
